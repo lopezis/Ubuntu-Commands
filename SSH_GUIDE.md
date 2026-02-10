@@ -25,7 +25,7 @@ La mayoría de los ataques son automatizados. Sigue estos pasos para mitigar el 
 Todo se gestiona en `/etc/ssh/sshd_config.` Haz una copia de seguridad antes de editar:
 
 #### bash
-`sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak`
+<br>`sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak`
 
 
 ## 4. Parámetros Críticos a Modificar
@@ -33,17 +33,17 @@ Usa sudo nano `/etc/ssh/sshd_config` y ajusta lo siguiente:
 
 ### 4.1. Cambiar el Puerto (Seguridad por Oscuridad):
 Cambia el puerto 22 por uno alto (ej. 52222) para evitar escaneos masivos.
-`Port 52222`
+<br>`Port 52222`
 ### 4.2. Deshabilitar el Login de Root:
 Nunca permitas entrar directamente como superusuario.
-`PermitRootLogin no`
+<br>`PermitRootLogin no`
 ### 4.3. Deshabilitar Contraseñas (Solo Llaves SSH):
 Es la mejora de seguridad más importante.
-`PasswordAuthentication no`
+<br>`PasswordAuthentication no`
 ### 4.4. Limitar Intentos de Autenticación:
-`MaxAuthTries 3`
+<br>`MaxAuthTries 3`
 ### 4.5. Deshabilitar Contraseñas Vacías:
-`PermitEmptyPasswords no`
+<br>`PermitEmptyPasswords no`
 
 --
 >[!IMPORTANT]
