@@ -41,9 +41,9 @@ Nunca permitas entrar directamente como superusuario.
 Es la mejora de seguridad más importante.
 <br>`PasswordAuthentication no`
 ### 4.4. Limitar Intentos de Autenticación:
-<br>`MaxAuthTries 3`
+`MaxAuthTries 3`
 ### 4.5. Deshabilitar Contraseñas Vacías:
-<br>`PermitEmptyPasswords no`
+`PermitEmptyPasswords no`
 
 --
 >[!IMPORTANT]
