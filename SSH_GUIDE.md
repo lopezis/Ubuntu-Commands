@@ -1,4 +1,4 @@
-# Implementación y Hardening de SSH en Ubuntu Server
+# Implementación de SSH en Ubuntu Server
 
 Esta guía cubre desde la instalación básica hasta las configuraciones de seguridad avanzadas para proteger el acceso remoto a tu servidor Linux.
 
