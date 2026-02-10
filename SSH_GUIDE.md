@@ -44,6 +44,7 @@ Es la mejora de seguridad más importante.
 `MaxAuthTries 3`
 ### 4.5. Deshabilitar Contraseñas Vacías:
 `PermitEmptyPasswords no`
+
 --
 >[!IMPORTANT]
 >Después de cualquier cambio, reinicia el servicio para aplicar los efectos:
