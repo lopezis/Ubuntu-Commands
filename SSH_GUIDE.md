@@ -44,6 +44,47 @@ Es la mejora de seguridad más importante.
 `MaxAuthTries 3`
 ### 4.5. Deshabilitar Contraseñas Vacías:
 `PermitEmptyPasswords no`
+## 5. Implementación de Llaves SSH (Key-Based Auth)
+Es mucho más seguro que cualquier contraseña tradicional.
+### 5.1 En tu PC local: Genera el par de llaves (se recomienda el algoritmo Ed25519).
+#### bash
+<code>ssh-keygen -t ed25519 -C "tu_correo@ejemplo.com" </code>
+
+### 5.2 Enviar la llave al servidor:
+#### bash
+<code>ssh-copy-id -p [PUERTO] usuario@ip-del-servidor</code>
+
+### 5.3 Probar conexión:
+#### bash
+<code>ssh -p [PUERTO] usuario@ip-del-servidor</code>
+
+## 6. Hacks y Tips Pro
+### 6.1 Banner de Advertencia
+Crea un archivo en /etc/issue.net con un mensaje de advertencia legal. Luego, en sshd_config, activa la línea:
+<code>Banner /etc/issue.net</code>
+### 6.2 Fail2Ban
+Instala Fail2Ban para banear automáticamente IPs que fallen múltiples intentos de conexión.
+#### bash
+<code>sudo apt install fail2ban -y</code>
+
+Configura una "jail" para SSH en /etc/fail2ban/jail.local.
+### 6.3 SSH Alias (Config File Local)
+Para no escribir toda la IP y el puerto cada vez, edita en tu PC local el archivo `~/.ssh/config`:
+#### text
+<code>Host mi-servidor
+    HostName 1.2.3.4
+    User miusuario
+    Port 52222
+    IdentityFile ~/.ssh/id_ed25519</code>
+
+
+Ahora solo entra escribiendo: ssh mi-servidor
+### 6.4 Auditoría de Accesos
+Revisa quién ha intentado entrar a tu servidor con el comando lastlog o consulta los logs en tiempo real:
+#### bash
+<code>sudo tail -f /var/log/auth.log</code>
+
+
 
 --
 >[!IMPORTANT]
