@@ -9,7 +9,7 @@ Si tu Ubuntu no tiene el servidor SSH activo, instálalo con:
 
 #### bash
 `sudo apt update`
-`sudo apt install openssh-server -y`
+<br>`sudo apt install openssh-server -y`
 
 ## 2. Verificación del Servicio
 Asegúrate de que esté corriendo correctamente:
